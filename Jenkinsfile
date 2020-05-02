@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'scons platform=linux'
+                sh 'scons platform=windows'
             }
         }
     }
