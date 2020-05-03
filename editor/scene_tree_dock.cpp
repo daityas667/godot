@@ -1775,6 +1775,7 @@ void SceneTreeDock::_toggle_editable_children(Node *p_node) {
 		bool editable = !EditorNode::get_singleton()->get_edited_scene()->is_editable_instance(p_node);
 		EditorNode::get_singleton()->get_edited_scene()->set_editable_instance(p_node, editable);
 		if (editable)
+			WARN_PRINT("If an editable instance of a scene is reparented, the data will be lost unless it is set to editable again.");
 			p_node->set_scene_instance_load_placeholder(false);
 
 		Node3DEditor::get_singleton()->update_all_gizmos(p_node);
